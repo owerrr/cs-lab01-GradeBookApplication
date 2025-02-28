@@ -139,7 +139,7 @@ __Note:__ This isn't the only way to accomplish implementation, however; this is
 			- This should be of type `bool`.
 			- This should be the second parameter.
 		- [x] Set `IsWeight` in the `BaseGradeBook` constructor
-			- [ ] Set the `IsWeighted` property using the `bool` parameter
+			- [x] Set the `IsWeighted` property using the `bool` parameter
 		- [x] Add a `bool` to the `StandardGradeBook` constructor
 			- This should be of type `bool`.
 			- This should be the second parameter.
