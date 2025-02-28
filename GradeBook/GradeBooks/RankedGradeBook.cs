@@ -16,17 +16,24 @@ namespace GradeBook.GradeBooks
         {
             if (this.Students.Count < 5) throw new InvalidOperationException();
 
-            List<Student> sorted = Students.OrderBy(x => x.AverageGrade).ToList();
-            ////////////////////////////////////////////////////////////
-            /// 
-            ////////////////////////////////////////////////////////////
-            if (averageGrade >= 90)
+            List<double> sorted = Students.Select(x => x.AverageGrade).ToList();
+
+            double x = 0;
+            foreach(double avgGrade in sorted)
+            {
+                if (avgGrade > averageGrade) x++;
+            }
+
+            double studentsCount = Convert.ToDouble(Students.Count);
+            double perc = (x/(studentsCount-1))*100;
+
+            if (perc <= 20)
                 return 'A';
-            else if (averageGrade >= 80)
+            else if (perc <= 40 && perc > 20)
                 return 'B';
-            else if (averageGrade >= 70)
+            else if (perc <= 60 && perc > 40)
                 return 'C';
-            else if (averageGrade >= 60)
+            else if (perc <= 80 && perc > 60) 
                 return 'D';
             else
                 return 'F';

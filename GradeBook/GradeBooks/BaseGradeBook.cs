@@ -128,7 +128,7 @@ namespace GradeBook.GradeBooks
                     grade = 0;
                     break;
             }
-            if (studentType.Equals(Enums.StudentType.Honors) || studentType.Equals(Enums.StudentType.DualEnrolled)) grade += 1;
+            if (IsWeighted && (studentType == Enums.StudentType.Honors || studentType == Enums.StudentType.DualEnrolled)) grade += 1;
 
             return grade;
         }
